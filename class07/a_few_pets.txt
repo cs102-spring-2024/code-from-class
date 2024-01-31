@@ -1,0 +1,6 @@
+dog 25.4
+cat 11.2
+cat 12.3
+dog 72.9
+dog 65.3
+end

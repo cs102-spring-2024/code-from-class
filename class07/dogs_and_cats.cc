@@ -18,6 +18,21 @@ using namespace std;
 const int NUM_PETS = 1000;
 
 /**
+ * @brief Returns the average of all values in array numbers
+ * 
+ * @param numbers - an array of numbers
+ * @param size - the size of the array
+ * @return double - the average
+ */
+double average(double numbers[], int size) {
+    double total = 0;
+    for (int i = 0; i < size; i++) {
+        total += numbers[i];
+    }
+    return total / size;
+}
+
+/**
  * @brief Prints array of ints of size size
  * 
  * Note: it's a good idea to make parameters const if you don't change them.
@@ -61,8 +76,13 @@ int main() {
 
     }
 
-    print_doubles(dog_weights, dog_index);
-    print_doubles(cat_weights, cat_index);
+    // print_doubles(dog_weights, dog_index);
+    // print_doubles(cat_weights, cat_index);
 
+    double average_dog = average(dog_weights, dog_index);
+    double average_cat = average(cat_weights, cat_index);
+
+    cout << "The average dog weight is " << average_dog << endl;
+    cout << "The average cat weight is " << average_cat << endl;
 
 }

@@ -123,7 +123,7 @@ private:
         // _capacity += 100;
         _stack = new int[_capacity];
 
-        // Copy old stack into new stack:
+        // Copy old stack into new stack, then delete old stack:
         for (int i = 0; i < _size; i++) {
             _stack[i] = old_stack[i];
         }

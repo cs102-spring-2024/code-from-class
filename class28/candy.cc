@@ -18,7 +18,7 @@ public:
  * 
  * TODO: return path itself.
  */
-CandyPair find_best_candy_path(vector<vector<int>> grid, int row, int col) {
+CandyPair find_best_candy_path(vector<vector<int>> & grid, int row, int col) {
     int rows = grid.size();
     int cols = grid[0].size();
 

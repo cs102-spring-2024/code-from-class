@@ -10,3 +10,8 @@
 .DS_Store
 .devcontainer/
 .vscode/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.cmake
+.idea/

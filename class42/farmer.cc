@@ -6,6 +6,11 @@ Farmer::Farmer(string name) {
     _backpack_capacity = 12;
 }
 
+Farmer::~Farmer() {
+    for (Item * item : _items)
+        delete item;
+}
+
 /**
  * @brief If item with given name is in _items, return a pointer to it.
  * Otherwise, return a nullptr to indicate not found
@@ -41,6 +46,11 @@ void Farmer::add_new_item(Item * thing) {
     else {
         cout << "Sorry, can't add item " << thing->get_name();
         cout << " because your backpack is full!" << endl;
+
+        // Note: we aren't continuing to work with this thing.
+        // So, thing will be not used after this point,
+        // and we should delete it!
+        delete thing;
     }
 }
 
@@ -57,6 +67,11 @@ void Farmer::add_item(Item * thing) {
     Item * match = find_item(thing->get_name());
     if (match != nullptr) {
         match->change_quantity(thing->get_quantity());
+
+        // Note: we're changing the quantity of an existing item instead of
+        // adding thing to _items. So, thing will be not used after this point,
+        // so we should delete it!
+        delete thing;
     }
     else {
         // If here, we don't have any of this item, so push it back

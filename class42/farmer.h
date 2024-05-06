@@ -19,6 +19,7 @@ private:
 
 public:
     Farmer(string name);
+    ~Farmer();
     void say_hi();
     void display(ostream & out) const;
     void add_item(Item * thing);
